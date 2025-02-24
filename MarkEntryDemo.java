@@ -1,4 +1,4 @@
-public class MaxEntryDemo {
+public class MarkEntryDemo {
     public static void main(String[] args) {
         MarkEntry markEntry = new MarkEntry();
         
