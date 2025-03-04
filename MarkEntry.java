@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // Class for handling marks entry and calculations
@@ -6,12 +7,25 @@ public class MarkEntry {
     private double[] scores = new double[5];
     private Scanner scanner = new Scanner(System.in);
 
-    // Method to input scores for 5 subjects
+    // Method to input scores for 5 subjects with exception handling
     public void inputScore() {
         System.out.println("Enter marks for 5 subjects:");
         for (int i = 0; i < scores.length; i++) {
-            System.out.print("Subject " + (i + 1) + ": ");
-            scores[i] = scanner.nextDouble();
+            while (true) {
+                try {
+                    System.out.print("Subject " + (i + 1) + ": ");
+                    scores[i] = scanner.nextDouble();
+                    if (scores[i] < 0 || scores[i] > 100) {
+                        throw new IllegalArgumentException("Marks should be between 0 and 100.");
+                    }
+                    break; // Exit loop if input is valid
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input! Please enter a valid number.");
+                    scanner.next(); // Clear the invalid input
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
     }
 
@@ -38,19 +52,27 @@ public class MarkEntry {
         else return 'F';
     }
 
-    // Method to sort scores in ascending order
+    // Method to sort scores in ascending order with exception handling
     public void sortScores() {
-        Arrays.sort(scores);
+        try {
+            Arrays.sort(scores);
+        } catch (Exception e) {
+            System.out.println("An error occurred while sorting the scores: " + e.getMessage());
+        }
     }
 
-    // Method to display the scores and results
+    // Method to display the scores and results with exception handling
     public void displayResults() {
-        System.out.println("Sorted Scores: " + Arrays.toString(scores));
-        double total = computeTotal();
-        double avg = average();
-        char grade = getGrade(avg);
-        System.out.println("Total Marks: " + total);
-        System.out.println("Average Marks: " + avg);
-        System.out.println("Average Grade: " + grade);
+        try {
+            System.out.println("Sorted Scores: " + Arrays.toString(scores));
+            double total = computeTotal();
+            double avg = average();
+            char grade = getGrade(avg);
+            System.out.println("Total Marks: " + total);
+            System.out.println("Average Marks: " + avg);
+            System.out.println("Average Grade: " + grade);
+        } catch (Exception e) {
+            System.out.println("An error occurred while displaying results: " + e.getMessage());
+        }
     }
 }
