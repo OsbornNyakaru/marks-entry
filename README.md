@@ -1,19 +1,19 @@
-# Mark Entry System in Java With Arrays
+# ✨Mark Entry System in Java With Arrays ✨
 
-## Overview
+## 🚀Overview
 This Java program captures marks for 5 subjects, calculates the total and average marks, determines the average grade, sorts the marks in ascending order, and displays the results. The program consists of two classes:
 
 1. **MarkEntry** - Handles input, calculations, and sorting of marks.
 2. **MarksEntryDemo** - Contains the `main` method and runs the program.
 
-## Features
+## 🎡Features
 - Accepts marks for 5 subjects from the user.
 - Computes total and average marks.
 - Determines the average grade based on the computed average.
 - Sorts and displays the marks in ascending order.
 - Outputs the final results to the console.
 
-## Classes and Methods
+## 🔮Classes and Methods
 
 ### **1. MarkEntry Class**
 Handles input and computation logic.
@@ -32,7 +32,7 @@ The main class that initializes and runs the program.
 #### **Methods:**
 - `main(String[] args)`: Calls methods in `MarkEntry` to execute the program.
 
-## How to Compile and Run
+## 🖥How to Compile and Run
 Ensure you have Java installed. Then:
 
 1. **Compile the program:**
