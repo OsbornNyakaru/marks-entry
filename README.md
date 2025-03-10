@@ -1,4 +1,4 @@
-# Mark Entry System in Java
+# Mark Entry System in Java With Arrays
 
 ## Overview
 This Java program captures marks for 5 subjects, calculates the total and average marks, determines the average grade, sorts the marks in ascending order, and displays the results. The program consists of two classes:
